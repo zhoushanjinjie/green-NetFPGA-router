@@ -1,0 +1,12 @@
+/root/netfpga/projects/packet_generator/synth/nf2_top.ngc 1317660521
+/root/netfpga/projects/packet_generator/synth/syncfifo_1024x72.ngc 1317660118
+/root/netfpga/projects/packet_generator/synth/syncfifo_512x72.ngc 1311885784
+/root/netfpga/projects/packet_generator/synth/cdq_tx_fifo_256x72_to_36.ngc 1311884526
+/root/netfpga/projects/packet_generator/synth/cdq_rx_fifo_512x36_to_72.ngc 1311884422
+/root/netfpga/projects/packet_generator/synth/tri_mode_eth_mac.ngc 1311891002
+/root/netfpga/projects/packet_generator/synth/txfifo_512x72_to_9.ngc 1311884966
+/root/netfpga/projects/packet_generator/synth/rxfifo_8kx9_to_72.ngc 1311884756
+/root/netfpga/projects/packet_generator/synth/rxlengthfifo_128x13.ngc 1311884798
+/root/netfpga/projects/packet_generator/synth/pci2net_16x60.ngc 1311885410
+/root/netfpga/projects/packet_generator/synth/net2pci_16x32.ngc 1311885358
+OK

@@ -1,0 +1,252 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Wed Jul 27 14:39:51 GMT+00:00 2011.
+#
+# This is license NODELOCKED to HOSTID=0050C220CC76;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT plb_temac xilinxd 2012.07 permanent uncounted 80B35AA10565 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,plb_temac,ip,permanent,_175430968_177919684_177919686_726 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for plb_temac_v1
+FEATURE plb_temac_v1 xilinxd 1.0 permanent uncounted 1DAAC7F20587 \
+VENDOR_STRING=License_Type:Bought HOSTID=0050c220cc76 \
+ISSUER=Xilinx NOTICE="The license for this core was generated \
+for songtian@bit.edu.cn on 07/28/2011It is the responsibility \
+of the Licensee of this core to adhere to all terms and \
+conditions of the applicable license agreement when using this \
+core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT xps_ll_temac xilinxd 2012.07 permanent uncounted \
+2646146380C0 \
+VENDOR_STRING="License_Type:Bought;songtian@bit.edu.cn, \
+xps_ll_temac,ip,permanent,_175430968_177919684_177919686_640" \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for xps_ll_temac_v2
+FEATURE xps_ll_temac_v2 xilinxd 1.0 permanent uncounted F329ED6B1D58 \
+VENDOR_STRING=License_Type:Bought HOSTID=0050c220cc76 \
+ISSUER=Xilinx NOTICE="The license for this core was generated \
+for songtian@bit.edu.cn on 07/28/2011It is the responsibility \
+of the Licensee of this core to adhere to all terms and \
+conditions of the applicable license agreement when using this \
+core." TS_OK
+#
+# Licenses for xps_ll_temac_v1
+FEATURE xps_ll_temac_v1 xilinxd 1.0 permanent uncounted 2DF636523998 \
+VENDOR_STRING=License_Type:Bought HOSTID=0050c220cc76 \
+ISSUER=Xilinx NOTICE="The license for this core was generated \
+for songtian@bit.edu.cn on 07/28/2011It is the responsibility \
+of the Licensee of this core to adhere to all terms and \
+conditions of the applicable license agreement when using this \
+core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT soft_temac_wrap xilinxd 2012.07 permanent uncounted \
+AF8356402EC3 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,soft_temac_wrap,ip,permanent,_175430968_177919684_177919686_305 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for soft_temac_wrap_v2
+FEATURE soft_temac_wrap_v2 xilinxd 1.0 permanent uncounted \
+A264442D55D8 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT 10_100_mb_eth_mac xilinxd 2012.07 permanent uncounted \
+681CC5177066 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,10_100_mb_eth_mac,ip,permanent,_175430968_177919684_177919686_421 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT opb_ethernet xilinxd 2012.07 permanent uncounted \
+12ED7EC178DC \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,opb_ethernet,ip,permanent,_175430968_177919684_177919686_468 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for opb_ethernet_v1
+FEATURE opb_ethernet_v1 xilinxd 1.0 permanent uncounted 2D3DBF2B0A2C \
+VENDOR_STRING=License_Type:Bought HOSTID=0050c220cc76 \
+ISSUER=Xilinx NOTICE="The license for this core was generated \
+for songtian@bit.edu.cn on 07/28/2011It is the responsibility \
+of the Licensee of this core to adhere to all terms and \
+conditions of the applicable license agreement when using this \
+core." TS_OK
+#
+# Licenses for opb_ethernet_v1_00_j
+FEATURE opb_ethernet_v1_00_j xilinxd 1.0 permanent uncounted \
+848813D4901F VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for opb_ethernet_v1_00_k
+FEATURE opb_ethernet_v1_00_k xilinxd 1.0 permanent uncounted \
+1B35E58CFFD7 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for opb_ethernet_v1_00_l
+FEATURE opb_ethernet_v1_00_l xilinxd 1.0 permanent uncounted \
+4F4D07C0CA73 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for opb_ethernet_v1_00_m
+FEATURE opb_ethernet_v1_00_m xilinxd 1.0 permanent uncounted \
+73D25168B1E3 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for opb_ethernet_v1_01_a
+FEATURE opb_ethernet_v1_01_a xilinxd 1.0 permanent uncounted \
+AA921F89D672 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT plb_ethernet xilinxd 2012.07 permanent uncounted \
+DCF919F6C751 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,plb_ethernet,ip,permanent,_175430968_177919684_177919686_201 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for plb_ethernet_v1_00_a
+FEATURE plb_ethernet_v1_00_a xilinxd 1.0 permanent uncounted \
+1494F70585BF VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for plb_ethernet_v1
+FEATURE plb_ethernet_v1 xilinxd 1.0 permanent uncounted 710A18EA8501 \
+VENDOR_STRING=License_Type:Bought HOSTID=0050c220cc76 \
+ISSUER=Xilinx NOTICE="The license for this core was generated \
+for songtian@bit.edu.cn on 07/28/2011It is the responsibility \
+of the Licensee of this core to adhere to all terms and \
+conditions of the applicable license agreement when using this \
+core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT tri_mode_eth_mac xilinxd 2012.07 permanent uncounted \
+F8BEECCBF9C2 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,tri_mode_eth_mac,ip,permanent,_175430968_177919684_177919686_228 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# Licenses for tri_mode_eth_mac_v3
+FEATURE tri_mode_eth_mac_v3 xilinxd 1.0 permanent uncounted \
+603D293817A4 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for tri_mode_eth_mac_v1_1
+FEATURE tri_mode_eth_mac_v1_1 xilinxd 1.0 permanent uncounted \
+FF6A93A6B279 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for tri_mode_eth_mac_v4
+FEATURE tri_mode_eth_mac_v4 xilinxd 1.0 permanent uncounted \
+7E3BC520DD96 VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# Licenses for tri_mode_eth_mac_v2
+FEATURE tri_mode_eth_mac_v2 xilinxd 1.0 permanent uncounted \
+AD0965ACC58E VENDOR_STRING=License_Type:Bought \
+HOSTID=0050c220cc76 ISSUER=Xilinx NOTICE="The license for this \
+core was generated for songtian@bit.edu.cn on 07/28/2011It is \
+the responsibility of the Licensee of this core to adhere to \
+all terms and conditions of the applicable license agreement \
+when using this core." TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT axi_ethernet_soft_10_100 xilinxd 2012.07 permanent \
+uncounted 686B64A211F4 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,axi_ethernet_soft_10_100,ip,permanent,_175430968_177919684_177919686_709 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# This is a permanent license generated on Wed Jul 27 14:39:51 GMT+00:00 2011
+INCREMENT axi_ethernet_soft_tri_mode xilinxd 2012.07 permanent \
+uncounted A7AEA3801639 \
+VENDOR_STRING=License_Type:Bought;songtian@bit.edu.cn,axi_ethernet_soft_tri_mode,ip,permanent,_175430968_177919684_177919686_900 \
+HOSTID=0050c220cc76 ISSUER="Xilinx Inc" NOTICE="The license \
+for this core was generated for songtian@bit.edu.cn on \
+07/28/2011It is the responsibility of the Licensee of this \
+core to adhere to all terms and conditions of the applicable \
+license agreement when using this core." START=27-Jul-2011 \
+TS_OK
+#
+# ----- REMOVE LINES BELOW HERE --------------------------

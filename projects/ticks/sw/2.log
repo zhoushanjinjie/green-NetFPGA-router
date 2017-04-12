@@ -1,0 +1,274 @@
+MAC 0 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 0:      5
+Num pkts dropped (rx queue 0 full): 0
+Num pkts dropped (bad fcs q 0):     0
+Num words pushed out of rx queue 0: 45
+Num bytes pushed out of rx queue 0: 330
+Num pkts dequeued from rx queue 0: 5
+Num pkts in rx queue 0: 0
+
+Num pkts in tx queue 0:             0
+Num pkts dequeued from tx queue 0:           1
+Num words pushed out of tx queue 0: 1022
+Num bytes pushed out of tx queue 0: 1598
+Num pkts enqueued to tx queue 0: 1
+
+MAC 1 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 1:      0
+Num pkts dropped (rx queue 1 full): 0
+Num pkts dropped (bad fcs q 1):     0
+Num words pushed out of rx queue 1: 0
+Num bytes pushed out of rx queue 1: 0
+Num pkts dequeued from rx queue 1: 0
+Num pkts in rx queue 1: 0
+
+Num pkts in tx queue 1:             0
+Num pkts dequeued from tx queue 1:           48
+Num words pushed out of tx queue 1: 38638
+Num bytes pushed out of tx queue 1: 69174
+Num pkts enqueued to tx queue 1: 48
+
+MAC 2 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 2:      0
+Num pkts dropped (rx queue 2 full): 0
+Num pkts dropped (bad fcs q 2):     0
+Num words pushed out of rx queue 2: 0
+Num bytes pushed out of rx queue 2: 0
+Num pkts dequeued from rx queue 2: 0
+Num pkts in rx queue 2: 0
+
+Num pkts in tx queue 2:             0
+Num pkts dequeued from tx queue 2:           1
+Num words pushed out of tx queue 2: 1022
+Num bytes pushed out of tx queue 2: 1598
+Num pkts enqueued to tx queue 2: 1
+
+MAC 3 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 3:      0
+Num pkts dropped (rx queue 3 full): 0
+Num pkts dropped (bad fcs q 3):     0
+Num words pushed out of rx queue 3: 0
+Num bytes pushed out of rx queue 3: 0
+Num pkts dequeued from rx queue 3: 0
+Num pkts in rx queue 3: 0
+
+Num pkts in tx queue 3:             0
+Num pkts dequeued from tx queue 3:           2
+Num words pushed out of tx queue 3: 1056
+Num bytes pushed out of tx queue 3: 2704
+Num pkts enqueued to tx queue 3: 2
+
+IN_ARB_NUM_PKTS_SENT                  0
+IN_ARB_LAST_PKT_WORD_0_LO             0x7c9e127a
+IN_ARB_LAST_PKT_WORD_0_HI             0x00000000
+IN_ARB_LAST_PKT_CTRL_0                0xa6281c19
+IN_ARB_LAST_PKT_WORD_1_LO             0x18ec69a4
+IN_ARB_LAST_PKT_WORD_1_HI             0x7c9e1580
+IN_ARB_LAST_PKT_CTRL_1                0x27e06ed
+IN_ARB_STATE                          0
+
+OQ_QUEUE_0_NUM_WORDS_LEFT                   65781
+OQ_QUEUE_0_NUM_PKT_BYTES_STORED             66
+OQ_QUEUE_0_NUM_OVERHEAD_BYTES_STORED        8
+OQ_QUEUE_0_NUM_PKTS_STORED                  1
+OQ_QUEUE_0_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_0_NUM_PKT_BYTES_REMOVED            1598
+OQ_QUEUE_0_NUM_OVERHEAD_BYTES_REMOVED       8
+OQ_QUEUE_0_NUM_PKTS_REMOVED                 1
+OQ_QUEUE_0_ADDR_LO                       0x00000000
+OQ_QUEUE_0_ADDR_HI                       0x0000ffff
+OQ_QUEUE_0_WR_ADDR                       0x0000000a
+OQ_QUEUE_0_RD_ADDR                       0x0000045b
+OQ_QUEUE_0_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_0_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_0_CTRL                          0x00000001
+
+OQ_QUEUE_1_NUM_WORDS_LEFT                   65857
+OQ_QUEUE_1_NUM_PKT_BYTES_STORED             330
+OQ_QUEUE_1_NUM_OVERHEAD_BYTES_STORED        40
+OQ_QUEUE_1_NUM_PKTS_STORED                  5
+OQ_QUEUE_1_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_1_NUM_PKT_BYTES_REMOVED            5776
+OQ_QUEUE_1_NUM_OVERHEAD_BYTES_REMOVED       40
+OQ_QUEUE_1_NUM_PKTS_REMOVED                 5
+OQ_QUEUE_1_ADDR_LO                       0x00010000
+OQ_QUEUE_1_ADDR_HI                       0x0001ffff
+OQ_QUEUE_1_WR_ADDR                       0x00010032
+OQ_QUEUE_1_RD_ADDR                       0x00014015
+OQ_QUEUE_1_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_1_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_1_CTRL                          0x00000001
+
+OQ_QUEUE_2_NUM_WORDS_LEFT                   65536
+OQ_QUEUE_2_NUM_PKT_BYTES_STORED             0
+OQ_QUEUE_2_NUM_OVERHEAD_BYTES_STORED        0
+OQ_QUEUE_2_NUM_PKTS_STORED                  0
+OQ_QUEUE_2_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_2_NUM_PKT_BYTES_REMOVED            0
+OQ_QUEUE_2_NUM_OVERHEAD_BYTES_REMOVED       0
+OQ_QUEUE_2_NUM_PKTS_REMOVED                 0
+OQ_QUEUE_2_ADDR_LO                       0x00020000
+OQ_QUEUE_2_ADDR_HI                       0x0002ffff
+OQ_QUEUE_2_WR_ADDR                       0x00020000
+OQ_QUEUE_2_RD_ADDR                       0x00020000
+OQ_QUEUE_2_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_2_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_2_CTRL                          0x00000001
+
+OQ_QUEUE_3_NUM_WORDS_LEFT                   65536
+OQ_QUEUE_3_NUM_PKT_BYTES_STORED             0
+OQ_QUEUE_3_NUM_OVERHEAD_BYTES_STORED        0
+OQ_QUEUE_3_NUM_PKTS_STORED                  0
+OQ_QUEUE_3_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_3_NUM_PKT_BYTES_REMOVED            0
+OQ_QUEUE_3_NUM_OVERHEAD_BYTES_REMOVED       0
+OQ_QUEUE_3_NUM_PKTS_REMOVED                 0
+OQ_QUEUE_3_ADDR_LO                       0x00030000
+OQ_QUEUE_3_ADDR_HI                       0x0003ffff
+OQ_QUEUE_3_WR_ADDR                       0x00030000
+OQ_QUEUE_3_RD_ADDR                       0x00030000
+OQ_QUEUE_3_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_3_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_3_CTRL                          0x00000001
+
+MAC 0 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 0:      2
+Num pkts dropped (rx queue 0 full): 0
+Num pkts dropped (bad fcs q 0):     0
+Num words pushed out of rx queue 0: 18
+Num bytes pushed out of rx queue 0: 132
+Num pkts dequeued from rx queue 0: 2
+Num pkts in rx queue 0: 0
+
+Num pkts in tx queue 0:             0
+Num pkts dequeued from tx queue 0:           0
+Num words pushed out of tx queue 0: 0
+Num bytes pushed out of tx queue 0: 0
+Num pkts enqueued to tx queue 0: 0
+
+MAC 1 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 1:      0
+Num pkts dropped (rx queue 1 full): 0
+Num pkts dropped (bad fcs q 1):     0
+Num words pushed out of rx queue 1: 0
+Num bytes pushed out of rx queue 1: 0
+Num pkts dequeued from rx queue 1: 0
+Num pkts in rx queue 1: 0
+
+Num pkts in tx queue 1:             0
+Num pkts dequeued from tx queue 1:           0
+Num words pushed out of tx queue 1: 0
+Num bytes pushed out of tx queue 1: 0
+Num pkts enqueued to tx queue 1: 0
+
+MAC 2 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 2:      0
+Num pkts dropped (rx queue 2 full): 0
+Num pkts dropped (bad fcs q 2):     0
+Num words pushed out of rx queue 2: 0
+Num bytes pushed out of rx queue 2: 0
+Num pkts dequeued from rx queue 2: 0
+Num pkts in rx queue 2: 0
+
+Num pkts in tx queue 2:             0
+Num pkts dequeued from tx queue 2:           0
+Num words pushed out of tx queue 2: 0
+Num bytes pushed out of tx queue 2: 0
+Num pkts enqueued to tx queue 2: 0
+
+MAC 3 Control: 0x00000000 TX enabled,  RX enabled,  reset off
+mac config 0x00
+Num pkts enqueued to rx queue 3:      0
+Num pkts dropped (rx queue 3 full): 0
+Num pkts dropped (bad fcs q 3):     0
+Num words pushed out of rx queue 3: 0
+Num bytes pushed out of rx queue 3: 0
+Num pkts dequeued from rx queue 3: 0
+Num pkts in rx queue 3: 0
+
+Num pkts in tx queue 3:             0
+Num pkts dequeued from tx queue 3:           0
+Num words pushed out of tx queue 3: 0
+Num bytes pushed out of tx queue 3: 0
+Num pkts enqueued to tx queue 3: 0
+
+IN_ARB_NUM_PKTS_SENT                  0
+IN_ARB_LAST_PKT_WORD_0_LO             0x5a4e52b1
+IN_ARB_LAST_PKT_WORD_0_HI             0x00000000
+IN_ARB_LAST_PKT_CTRL_0                0x786871ef
+IN_ARB_LAST_PKT_WORD_1_LO             0x120fa927
+IN_ARB_LAST_PKT_WORD_1_HI             0x5a4e5506
+IN_ARB_LAST_PKT_CTRL_1                0x1ce58a7
+IN_ARB_STATE                          0
+
+OQ_QUEUE_0_NUM_WORDS_LEFT                   65536
+OQ_QUEUE_0_NUM_PKT_BYTES_STORED             0
+OQ_QUEUE_0_NUM_OVERHEAD_BYTES_STORED        0
+OQ_QUEUE_0_NUM_PKTS_STORED                  0
+OQ_QUEUE_0_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_0_NUM_PKT_BYTES_REMOVED            0
+OQ_QUEUE_0_NUM_OVERHEAD_BYTES_REMOVED       0
+OQ_QUEUE_0_NUM_PKTS_REMOVED                 0
+OQ_QUEUE_0_ADDR_LO                       0x00000000
+OQ_QUEUE_0_ADDR_HI                       0x0000ffff
+OQ_QUEUE_0_WR_ADDR                       0x00000000
+OQ_QUEUE_0_RD_ADDR                       0x00000000
+OQ_QUEUE_0_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_0_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_0_CTRL                          0x00000001
+
+OQ_QUEUE_1_NUM_WORDS_LEFT                   65745
+OQ_QUEUE_1_NUM_PKT_BYTES_STORED             132
+OQ_QUEUE_1_NUM_OVERHEAD_BYTES_STORED        16
+OQ_QUEUE_1_NUM_PKTS_STORED                  2
+OQ_QUEUE_1_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_1_NUM_PKT_BYTES_REMOVED            2032
+OQ_QUEUE_1_NUM_OVERHEAD_BYTES_REMOVED       16
+OQ_QUEUE_1_NUM_PKTS_REMOVED                 2
+OQ_QUEUE_1_ADDR_LO                       0x00010000
+OQ_QUEUE_1_ADDR_HI                       0x0001ffff
+OQ_QUEUE_1_WR_ADDR                       0x00010014
+OQ_QUEUE_1_RD_ADDR                       0x00013209
+OQ_QUEUE_1_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_1_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_1_CTRL                          0x00000001
+
+OQ_QUEUE_2_NUM_WORDS_LEFT                   65536
+OQ_QUEUE_2_NUM_PKT_BYTES_STORED             0
+OQ_QUEUE_2_NUM_OVERHEAD_BYTES_STORED        0
+OQ_QUEUE_2_NUM_PKTS_STORED                  0
+OQ_QUEUE_2_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_2_NUM_PKT_BYTES_REMOVED            0
+OQ_QUEUE_2_NUM_OVERHEAD_BYTES_REMOVED       0
+OQ_QUEUE_2_NUM_PKTS_REMOVED                 0
+OQ_QUEUE_2_ADDR_LO                       0x00020000
+OQ_QUEUE_2_ADDR_HI                       0x0002ffff
+OQ_QUEUE_2_WR_ADDR                       0x00020000
+OQ_QUEUE_2_RD_ADDR                       0x00020000
+OQ_QUEUE_2_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_2_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_2_CTRL                          0x00000001
+
+OQ_QUEUE_3_NUM_WORDS_LEFT                   65536
+OQ_QUEUE_3_NUM_PKT_BYTES_STORED             0
+OQ_QUEUE_3_NUM_OVERHEAD_BYTES_STORED        0
+OQ_QUEUE_3_NUM_PKTS_STORED                  0
+OQ_QUEUE_3_NUM_PKTS_DROPPED                 0
+OQ_QUEUE_3_NUM_PKT_BYTES_REMOVED            0
+OQ_QUEUE_3_NUM_OVERHEAD_BYTES_REMOVED       0
+OQ_QUEUE_3_NUM_PKTS_REMOVED                 0
+OQ_QUEUE_3_ADDR_LO                       0x00030000
+OQ_QUEUE_3_ADDR_HI                       0x0003ffff
+OQ_QUEUE_3_WR_ADDR                       0x00030000
+OQ_QUEUE_3_RD_ADDR                       0x00030000
+OQ_QUEUE_3_NUM_PKTS_IN_Q                    0
+OQ_QUEUE_3_MAX_PKTS_IN_Q                    65535
+OQ_QUEUE_3_CTRL                          0x00000001
+

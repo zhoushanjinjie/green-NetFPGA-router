@@ -1,0 +1,101 @@
+`timescale 1ns / 1ps
+`include "registers.v"
+`include "udp_defines.v"
+
+module ticks  #(
+      parameter DATA_WIDTH = 64,
+      parameter CTRL_WIDTH = DATA_WIDTH/8,
+      parameter UDP_REG_SRC_WIDTH = 2
+   )(
+		
+
+    input       	                reset,
+
+    input                               clk,  
+    
+
+	     // --- Register interface
+    input                              reg_req_in,
+    input                              reg_ack_in,
+    input                              reg_rd_wr_L_in,
+    input  [`UDP_REG_ADDR_WIDTH-1:0]   reg_addr_in,
+    input  [`CPCI_NF2_DATA_WIDTH-1:0]  reg_data_in,
+    input  [UDP_REG_SRC_WIDTH-1:0]     reg_src_in,
+
+    output                             reg_req_out,
+    output                             reg_ack_out,
+    output                             reg_rd_wr_L_out,
+    output  [`UDP_REG_ADDR_WIDTH-1:0]  reg_addr_out,
+    output  [`CPCI_NF2_DATA_WIDTH-1:0] reg_data_out,
+    output  [UDP_REG_SRC_WIDTH-1:0]    reg_src_out,
+
+    // modify
+      output 						choice_62_5, // modify
+      output 						choice_125,
+      output 						choice_83, // modify
+      output						choice_50
+
+	);
+
+
+   //----------------------- local parameter ---------------------------
+ 
+	 
+   //---------------------------------My regs---------------------------
+  
+	wire						enable_ticks;
+	wire						reset_ticks;
+   	reg [31:0] 			           	tick_125 ;
+
+ //---------------------------------My wires---------------------------
+
+	wire[31:0]					tick_125_plus1 ;
+	wire[31:0]					data_tick_125 ; 
+
+ //---------------------------------combinational logic ---------------------------
+	assign 	tick_125_plus1 = tick_125 + 1'b1 ;
+	assign  data_tick_125  = tick_125 ;
+
+	always@(posedge clk) begin
+		if(reset)begin
+		tick_125 = 0 ;
+		end
+		tick_125 = tick_125_plus1 ;
+		
+	end
+
+		tick_regs treg (
+		.reg_req_in(reg_req_in), 
+		.reg_ack_in(reg_ack_in), 
+		.reg_rd_wr_L_in(reg_rd_wr_L_in), 
+		.reg_addr_in(reg_addr_in), 
+		.reg_data_in(reg_data_in), 
+		.reg_src_in(reg_src_in), 
+		
+		.reg_req_out(reg_req_out), 
+		.reg_ack_out(reg_ack_out), 
+		.reg_rd_wr_L_out(reg_rd_wr_L_out), 
+		.reg_addr_out(reg_addr_out), 
+		.reg_data_out(reg_data_out), 
+		.reg_src_out(reg_src_out), 
+
+		.enable_ticks(enable_ticks),
+		.reset_ticks(reset_ticks),
+		.data_tick_125(data_tick_125), 
+
+		// modify
+      .choice_62_5(choice_62_5), // modify
+      .choice_125(choice_125),
+      .choice_50(choice_50),
+      .choice_83(choice_83),
+
+	
+		.clk(clk), 
+		.reset(reset)
+	);
+		
+	
+
+
+       
+endmodule

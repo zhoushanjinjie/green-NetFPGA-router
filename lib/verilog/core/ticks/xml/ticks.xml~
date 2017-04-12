@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+	<nf:name>ticks</nf:name>
+	<nf:prefix>ticks</nf:prefix>
+	<nf:location>udp</nf:location>
+	<nf:description>System Tick Report</nf:description>
+	<nf:blocksize>256</nf:blocksize>
+	<nf:registers>
+		<nf:register>
+		  <nf:name>enable_ticks</nf:name>
+			<nf:description>Enable </nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+    <nf:register>
+		  <nf:name>reset_ticks</nf:name>
+			<nf:description>reset counter</nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+    <nf:register>
+		  <nf:name>tick125</nf:name>
+			<nf:description>higher half of the counter</nf:description>
+			<nf:type>software32</nf:type>
+    </nf:register>
+    <nf:register>
+		  <nf:name>tick83_3</nf:name>
+			<nf:description>lower half of the counter</nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+
+   <nf:register>
+		  <nf:name>tick62_5</nf:name>
+			<nf:description>lower half of the counter</nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+   <nf:register>
+		  <nf:name>tick12_5</nf:name>
+			<nf:description>lower half of the counter</nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+   <nf:register>
+		  <nf:name>tick1_25</nf:name>
+			<nf:description>lower half of the counter</nf:description>
+			<nf:type>software32</nf:type>
+		</nf:register>
+
+	</nf:registers>
+	<nf:constants>
+	</nf:constants>
+	<nf:types>
+	</nf:types>
+</nf:module>

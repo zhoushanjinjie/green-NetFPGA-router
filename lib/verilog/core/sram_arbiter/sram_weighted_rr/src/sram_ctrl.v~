@@ -1,0 +1,326 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    11:33:12 12/13/2011 
+// Design Name: 
+// Module Name:    sram_ctrl 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: <
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module sram_ctrl  #(parameter SRAM_ADDR_WIDTH = 19,
+                    parameter SRAM_DATA_WIDTH = 72 )
+   (
+
+
+// Running @ 62.5MHz
+// Feedback signals to modules
+	output reg [SRAM_DATA_WIDTH-1:0]    rd_0_data,
+   output reg                          rd_0_vld,
+
+	output reg [SRAM_DATA_WIDTH-1:0]    rd_1_data,
+   output reg                          rd_1_vld,
+
+
+
+
+//	from module controller
+
+   input      [SRAM_ADDR_WIDTH-1:0]    sram_addr_to_fifo,
+   input		  [SRAM_DATA_WIDTH-1:0]    sram_data_to_fifo,
+	input      [3:0]							sram_vld_to_fifo,
+
+// end running @ 62.5MHz
+//   output reg        [SRAM_ADDR_WIDTH-1:0]  sram_addr_from_fifo ,
+   output reg        [3:0]						 sram_vld_from_fifo ,
+	
+   output reg  		[SRAM_DATA_WIDTH-1:0]    rd_data_buf,
+	output 												 sram_rd_data_wr_en ,
+	output reg        [3:0]							 sram_vld_from_fifo_phase5 ,
+	
+//	output 												addr_not_vld ,
+	
+// --- SRAM signals (pins and control)
+//Running @ 125MHz
+
+   output reg [SRAM_ADDR_WIDTH-1:0]    sram_addr,
+   output reg                          sram_we,
+   output reg [SRAM_DATA_WIDTH/9-1:0]  sram_bw,
+   output reg [SRAM_DATA_WIDTH-1:0]    sram_wr_data,
+   output reg                          sram_tri_en,
+
+
+   input      [SRAM_DATA_WIDTH-1:0]    sram_rd_data,
+
+// --- Misc
+
+   input reset,
+   input clk,
+	input clk_125
+
+    );
+
+   wire          								empty_data_recv,full_data_recv;
+   wire          								empty_data_send, full_data_send;
+
+	wire       [94:0]							sram_data ;
+   reg        [3:0] 							sram_vld_from_fifo_phase1,sram_vld_from_fifo_phase2,sram_vld_from_fifo_phase3,sram_vld_from_fifo_phase4 ;
+   reg        [71:0]							sram_data_from_fifo_phase1; 
+   reg           								sram_data_rd_en;
+   reg 			 								sram_we_phase1;
+   reg  		  [SRAM_DATA_WIDTH-1:0]    sram_data_from_fifo ;
+	reg        [SRAM_ADDR_WIDTH-1:0]    sram_addr_from_fifo,sram_addr_wait ;
+//	reg        [3:0]							sram_vld_from_fifo ;
+
+
+  	sram_data_afifo sram_data_recv_afifo (
+	
+		.dout(sram_data),
+		.rd_clk(clk_125), 
+		.rd_en(sram_data_rd_en), 
+
+		.din({sram_data_to_fifo,sram_addr_to_fifo,sram_vld_to_fifo}), 
+		.wr_clk(clk), 
+		.wr_en(1'b1 && !full_data_recv), 
+
+		.rst(reset), 
+		.empty(empty_data_recv), 
+		.full(full_data_recv)
+	);
+
+  wire [73:0]			rd_data_from_fifo;
+  reg  [71:0]			sram_data_out ;
+  reg  [1:0]			reader;
+  
+  
+
+  	sram_rd_data_afifo sram_rd_data_send_afifo (
+
+		.dout(rd_data_from_fifo),
+		.rd_clk(clk), 
+		.rd_en(!empty_data_send), 
+
+		.din({rd_data_buf,sram_vld_from_fifo_phase5[1:0]}), 
+		.wr_clk(clk_125), 
+		.wr_en(sram_rd_data_wr_en && !full_data_send), 
+
+		.rst(reset), 
+		.empty(empty_data_send), 
+		.full(full_data_send)
+	);
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//    Data read signal manipulation
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	
+ parameter  RD_0 = 2'b10,
+            RD_1 = 2'b01;
+
+
+	always@(posedge clk) begin
+	
+	if(!empty_data_send)begin
+		sram_data_out <= rd_data_from_fifo[73:2] ;
+		reader        <= rd_data_from_fifo[1:0] ; 
+	end
+	else begin
+		sram_data_out <= 0;
+		reader        <= 0; 
+	
+	end
+	
+	end
+
+	always@ (posedge clk)begin
+			
+		if(reset)begin 
+			rd_0_data          = 72'b0 ;
+			rd_0_vld 			 = 1'b0 ;
+			rd_1_data          = 72'b0 ;
+			rd_1_vld 			 = 1'b0 ;
+		end
+		else if(reader == RD_0) begin	
+
+ 			rd_0_data          = sram_data_out ;
+			rd_0_vld 			 = 1'b1 ;
+				end //	      if(reader == RD_0) begin	
+	   else if(reader == RD_1) begin
+
+			rd_1_data          = sram_data_out ;
+			rd_1_vld 			 = 1'b1 ;
+					end //	       else if(reader == RD_1) begin
+	    else 	begin
+			rd_0_vld 			 = 1'b0 ;
+			rd_1_vld 			 = 1'b0 ;
+		 end
+	end
+	
+//	wire 		addr_not_vld ;
+	
+//	assign addr_not_vld = (sram_addr == sram_addr_wait && sram_addr_wait != 0 && !empty_data_recv) ;
+	
+	
+	
+	
+	
+  always @(posedge clk_125) begin
+  
+  if(reset)begin 
+  
+  // Initialize regs
+  
+   sram_addr_from_fifo 			<= 19'b0 ;
+	sram_data_from_fifo 			<= 72'b0 ;
+	sram_vld_from_fifo  			<=  4'b0 ; 
+	sram_wr_data        			<= 72'b0 ;
+	sram_addr  			  			<= 19'b0 ;
+	sram_we_phase1      			<= 1'b1 ; 
+	sram_tri_en         			<= 1'b0 ;
+	
+	sram_data_from_fifo_phase1 <= 0 ;
+	sram_vld_from_fifo_phase1  <= 4'b0 ; 
+	sram_vld_from_fifo_phase2  <= 4'b0 ;
+	sram_vld_from_fifo_phase3  <= 4'b0 ;
+	sram_vld_from_fifo_phase4  <= 4'b0 ;
+	sram_vld_from_fifo_phase5  <= 4'b0 ;
+
+	rd_data_buf   					<= 0;
+
+
+  end
+  else begin
+  
+  // Recv data from module controller
+  
+  	sram_addr_from_fifo <= sram_data[22:4] ;
+	sram_data_from_fifo <= sram_data[94:23] ;
+	sram_vld_from_fifo  <= sram_data[3:0] ; 
+	rd_data_buf   		  <= sram_rd_data;
+
+   // Delay two clock according to SRAM data sheet
+  
+	sram_we_phase1 	  <= sram_we ; 
+	sram_tri_en    	  <= ~sram_we_phase1 ;
+	
+	// wr_data  
+
+	sram_data_from_fifo_phase1<= sram_data_from_fifo ;
+	sram_wr_data 				  <= sram_data_from_fifo_phase1;
+
+	// Instantly transfer address, we and bw sigs
+
+//	sram_addr  <= sram_addr_from_fifo ;
+//	sram_addr_wait <= sram_addr ;
+	sram_addr_wait	<= sram_addr_from_fifo;
+	sram_addr	<= sram_addr_wait;
+	// Buffer rd_data
+	
+//	rd_data_buf <= sram_rd_data;
+
+   // Get write/read indicator, and wait to trigger a read 
+	
+	sram_vld_from_fifo_phase1 <= (empty_data_recv) ? 4'h0 : sram_vld_from_fifo ; 
+	sram_vld_from_fifo_phase2 <= sram_vld_from_fifo_phase1 ;
+	sram_vld_from_fifo_phase3 <= sram_vld_from_fifo_phase2 ;
+	sram_vld_from_fifo_phase4 <= sram_vld_from_fifo_phase3 ;
+	sram_vld_from_fifo_phase5 <= sram_vld_from_fifo_phase4 ;
+
+		end
+
+  end
+  
+///////////////////////////////////////////////////////////////////////////
+
+//  Data recv state machine
+
+///////////////////////////////////////////////////////////////////////////
+
+	//Trigger a read, and directly set sram_rd_data_wr_en high
+
+	assign sram_rd_data_wr_en = (sram_vld_from_fifo_phase5 > 4'b0 && sram_vld_from_fifo_phase5 < 4'b11) ;
+
+
+  
+ parameter  IDLE_SM = 0,
+            EXECUTE = 1;
+  reg  		current_stage, next_stage;
+
+
+  always @(posedge clk_125)
+     if (reset)begin
+       current_stage <= IDLE_SM;
+		end
+     else begin
+       current_stage <= next_stage ;
+		end
+		
+   always @* begin
+
+		next_stage = current_stage ;
+		sram_we    = 1'b1;
+		sram_bw    = 8'hff;
+		sram_data_rd_en = 1'b0 ;
+      
+		case (current_stage)
+		  IDLE_SM : begin
+					if(!empty_data_recv)begin			
+						next_stage = EXECUTE ;
+						sram_data_rd_en = 1'b1 ;
+
+		// One clock before 
+
+						sram_we        = (sram_vld_from_fifo > 4'b11 )? 1'b0 : 1'b1 ;
+  					   sram_bw        = (sram_vld_from_fifo > 4'b11 )? 8'h0 : 8'hff ;
+					end //					if(!empty_data_recv)begin			
+				else next_stage = IDLE_SM ;
+         end //		  IDLE_SM : begin
+
+	//	Each operation stays @ AFIFO one clock only 
+	//	Continous not-empty means burst writes or reads
+
+        EXECUTE : begin		
+			if(!empty_data_recv)begin			
+						next_stage = EXECUTE ;
+						sram_data_rd_en = 1'b1 ;
+						sram_we        = (sram_vld_from_fifo > 4'b11 )? 1'b0 : 1'b1 ;
+						sram_bw        = (sram_vld_from_fifo > 4'b11 )? 8'h0 : 8'hff ;
+						end //!empty_data_recv
+					else next_stage = IDLE_SM ;
+				end //        EXECUTE : begin		
+			
+       default: begin
+				next_stage   = IDLE_SM ;
+        end
+      endcase
+   end
+
+
+
+   // synthesis translate_off
+
+   // Synthesis code to set the we flag to 0 on startup to remove the annoying
+   // "Cypress SRAM stores 'h xxxxxxxxx at addr 'h xxxxx" messages at the
+   // beginning of the log file until the clock starts running.
+   initial
+   begin
+      sram_we = 1;
+   end
+
+   // synthesis translate_on
+
+
+endmodule

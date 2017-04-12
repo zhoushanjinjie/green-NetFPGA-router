@@ -1,0 +1,13 @@
+/root/netfpga/projects/reference_router/synth/nf2_top.ngc 1311866255
+/root/netfpga/projects/reference_router/synth/srl_cam_unencoded_32x32.ngc 1311860116
+/root/netfpga/projects/reference_router/synth/bram_cam_unencoded_32x32.ngc 1311859900
+/root/netfpga/projects/reference_router/synth/syncfifo_512x72.ngc 1311860584
+/root/netfpga/projects/reference_router/synth/cdq_tx_fifo_256x72_to_36.ngc 1311859326
+/root/netfpga/projects/reference_router/synth/cdq_rx_fifo_512x36_to_72.ngc 1311859222
+/root/netfpga/projects/reference_router/synth/tri_mode_eth_mac.ngc 1311865802
+/root/netfpga/projects/reference_router/synth/txfifo_512x72_to_9.ngc 1311859765
+/root/netfpga/projects/reference_router/synth/rxfifo_8kx9_to_72.ngc 1311859556
+/root/netfpga/projects/reference_router/synth/rxlengthfifo_128x13.ngc 1311859598
+/root/netfpga/projects/reference_router/synth/pci2net_16x60.ngc 1311860209
+/root/netfpga/projects/reference_router/synth/net2pci_16x32.ngc 1311860158
+OK

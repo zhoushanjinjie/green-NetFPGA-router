@@ -1,0 +1,493 @@
+Release 10.1.03 par K.39 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+localhost.localdomain::  Thu Jul 28 11:27:39 2011
+
+par -intstyle ise -ol high -smartguide smartguide.ncd -w nf2_top.ncd
+nf2_top_par.ncd 
+
+
+Constraints file: nf2_top.pcf.
+Loading device for application Rf_Device from file '2vp50.nph' in environment /opt/Xilinx/10.1/ISE.
+   "nf2_top" is an NCD, version 3.2, device xc2vp50, package ff1152, speed -7
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.400 Volts. (default - Range: 1.400 to 1.600 Volts)
+
+INFO:Timing:3377 - Intersecting Constraints found and resolved.  For more information see the TSI report.
+
+Device speed data version:  "PRODUCTION 1.94 2008-07-25".
+
+
+
+INFO:Par:402 - SmartGuide was run during Map. Since all guiding (mapping, packing, placement and routing) is completed
+   in MAP, PAR does not require the use of the guide switches. The -smartguide switch only generates a post place and
+   route guide report. Runtime can be reduced, if this report is not generated. PAR will automatically generate the
+   SmartGuide summary report based on the guide file used during MAP.
+Device Utilization Summary:
+
+   Number of BUFGMUXs                        8 out of 16     50%
+      Number of LOCed BUFGMUXs               8 out of 8     100%
+
+   Number of DCMs                            6 out of 8      75%
+   Number of External IOBs                 356 out of 692    51%
+      Number of LOCed IOBs                 356 out of 356   100%
+
+   Number of RAMB16s                       106 out of 232    45%
+   Number of SLICEs                      15080 out of 23616  63%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 1 mins 8 secs 
+Finished initial Timing Analysis.  REAL time: 1 mins 9 secs 
+
+Starting Router
+
+Phase 1: 20039 unrouted;       REAL time: 1 mins 27 secs 
+
+Phase 2: 11541 unrouted;       REAL time: 1 mins 31 secs 
+
+Phase 3: 6347 unrouted;       REAL time: 1 mins 43 secs 
+
+Phase 4: 6347 unrouted; (72945)      REAL time: 1 mins 44 secs 
+
+Phase 5: 6837 unrouted; (8350)      REAL time: 1 mins 48 secs 
+
+Phase 6: 6891 unrouted; (18)      REAL time: 1 mins 53 secs 
+
+Phase 7: 7332 unrouted; (0)      REAL time: 2 mins 19 secs 
+
+Phase 8: 0 unrouted; (0)      REAL time: 2 mins 52 secs 
+
+Phase 9: 0 unrouted; (0)      REAL time: 3 mins 13 secs 
+
+Phase 10: 0 unrouted; (0)      REAL time: 4 mins 9 secs 
+
+
+Total REAL time to Router completion: 4 mins 20 secs 
+Total CPU time to Router completion: 4 mins 19 secs 
+
+Loading database for application par from file: "smartguide.ncd"
+   "nf2_top" is an NCD, version 3.2, device xc2vp50, package ff1152, speed -7
+
+  SmartGuide Results
+  ------------------
+  This section describes the guide results after invoking the Router. This
+  report accurately reflects the differences between the input design
+  and the guide design.
+
+  Number of Components in the input design    |  15722
+    Number of guided Components               |  14850 out of  15722  94.5%
+    Number of re-implemented Components       |    706 out of  15722   4.5%
+    Number of new/changed Components          |    166 out of  15722   1.1%
+  Number of Nets in the input design          |  41562
+    Number of guided Nets                     |  34687 out of  41562  83.5%
+    Number of partially guided Nets           |   3150 out of  41562   7.6%
+    Number of re-routed Nets                  |   3285 out of  41562   7.9%
+    Number of new/changed Nets                |    440 out of  41562   1.1%
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|        core_clk_int |     BUFGMUX1P|Yes   | 9113 |  0.521     |  1.550      |
++---------------------+--------------+------+------+------------+-------------+
+|  rx_rgmii_1_clk_int |     BUFGMUX6S|Yes   |  322 |  0.351     |  1.511      |
++---------------------+--------------+------+------+------------+-------------+
+|    tx_rgmii_clk_int |     BUFGMUX2S|Yes   | 1451 |  0.333     |  1.548      |
++---------------------+--------------+------+------+------------+-------------+
+|  rx_rgmii_2_clk_int |     BUFGMUX5S|Yes   |  330 |  0.318     |  1.529      |
++---------------------+--------------+------+------+------------+-------------+
+|  rx_rgmii_0_clk_int |     BUFGMUX4S|Yes   |  332 |  0.434     |  1.508      |
++---------------------+--------------+------+------+------------+-------------+
+|  rx_rgmii_3_clk_int |     BUFGMUX7S|Yes   |  330 |  0.497     |  1.527      |
++---------------------+--------------+------+------+------------+-------------+
+|        cpci_clk_int |     BUFGMUX0S|Yes   |  369 |  0.466     |  1.551      |
++---------------------+--------------+------+------+------------+-------------+
+|  tx_rgmii_clk90_int |     BUFGMUX3P|Yes   |    8 |  0.136     |  1.517      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+Timing Score: 0
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+------------------------------------------------------------------------------------------------------
+  Constraint                                |  Check  | Worst Case |  Best Case | Timing |   Timing   
+                                            |         |    Slack   | Achievable | Errors |    Score   
+------------------------------------------------------------------------------------------------------
+  TS_core_clk_int = PERIOD TIMEGRP "core_cl | SETUP   |     0.019ns|     7.981ns|       0|           0
+  k_int" 8 ns HIGH 50%                      | HOLD    |     0.218ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_tx_clk_gmii = PERIOD TIMEGRP "tx_clock | SETUP   |     0.206ns|     7.794ns|       0|           0
+  _gmii" 8 ns HIGH 50%                      | HOLD    |     0.342ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_rx_clk = PERIOD TIMEGRP "rx_clock" 8 n | SETUP   |     0.520ns|     7.480ns|       0|           0
+  s HIGH 50%                                | HOLD    |     0.264ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_rgmii_falling_to_rising = MAXDELAY FRO | SETUP   |     0.867ns|     2.333ns|       0|           0
+  M TIMEGRP "rgmii_falling" TO TIMEGRP      |         |            |            |        |            
+      "rgmii_rising" 3.2 ns                 |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_ADDR" OFFSET = IN 4 ns BEFO | SETUP   |     1.135ns|     2.865ns|       0|           0
+  RE COMP "cpci_clk"                        |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_WR_DATA" OFFSET = IN 4 ns B | SETUP   |     1.147ns|     2.853ns|       0|           0
+  EFORE COMP "cpci_clk"                     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_DMA_INOUT" OFFSET = IN 4 ns | SETUP   |     1.233ns|     2.767ns|       0|           0
+   BEFORE COMP "cpci_clk"                   |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_DMA_IN" OFFSET = IN 4 ns BE | SETUP   |     1.272ns|     2.728ns|       0|           0
+  FORE COMP "cpci_clk"                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_REQ" OFFSET = IN 4 ns BEFOR | SETUP   |     1.316ns|     2.684ns|       0|           0
+  E COMP "cpci_clk"                         |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     1.392ns|     4.708ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/RXGMIIRSTGENEN.SYNC_GMII_MII_RX_RESET_I |         |            |            |        |            
+  /RESET_OUT"         MAXDELAY = 6.1 ns     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     1.665ns|     4.435ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT"     |         |            |            |        |            
+       MAXDELAY = 6.1 ns                    |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     1.700ns|     4.400ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT"     |         |            |            |        |            
+       MAXDELAY = 6.1 ns                    |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM1_DATA" OFFSET = OUT 4 ns AF | MAXDELAY|     1.701ns|     2.299ns|       0|           0
+  TER COMP "core_clk"                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM2_DATA" OFFSET = OUT 4 ns AF | MAXDELAY|     1.717ns|     2.283ns|       0|           0
+  TER COMP "core_clk"                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM1_OUT" OFFSET = OUT 4 ns AFT | MAXDELAY|     1.740ns|     2.260ns|       0|           0
+  ER COMP "core_clk"                        |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM2_OUT" OFFSET = OUT 4 ns AFT | MAXDELAY|     1.775ns|     2.225ns|       0|           0
+  ER COMP "core_clk"                        |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "rgmii_0_rxc_ibuf" MAXDELAY = 2.5 ns  | MAXDELAY|     1.897ns|     0.603ns|       0|           0
+------------------------------------------------------------------------------------------------------
+  NET "rgmii_2_rxc_ibuf" MAXDELAY = 2.5 ns  | MAXDELAY|     1.912ns|     0.588ns|       0|           0
+------------------------------------------------------------------------------------------------------
+  NET "rgmii_3_rxc_ibuf" MAXDELAY = 2.5 ns  | MAXDELAY|     2.034ns|     0.466ns|       0|           0
+------------------------------------------------------------------------------------------------------
+  NET "rgmii_1_rxc_ibuf" MAXDELAY = 2.5 ns  | MAXDELAY|     2.034ns|     0.466ns|       0|           0
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     2.203ns|     3.897ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1"   |         |            |            |        |            
+         MAXDELAY = 6.1 ns                  |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM2_DATA" OFFSET = IN 4 ns BEF | SETUP   |     2.266ns|     1.734ns|       0|           0
+  ORE COMP "core_clk"                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "SRAM1_DATA" OFFSET = IN 4 ns BEF | SETUP   |     2.269ns|     1.731ns|       0|           0
+  ORE COMP "core_clk"                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_DMA_INOUT" OFFSET = OUT 7 n | MAXDELAY|     2.311ns|     4.689ns|       0|           0
+  s AFTER COMP "cpci_clk"                   |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     2.465ns|     3.635ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT"     |         |            |            |        |            
+       MAXDELAY = 6.1 ns                    |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     2.507ns|     3.593ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT"     |         |            |            |        |            
+       MAXDELAY = 6.1 ns                    |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     2.578ns|     3.522ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/RXGMIIRSTGENEN.SYNC_GMII_MII_RX_RESET_I |         |            |            |        |            
+  /RESET_OUT"         MAXDELAY = 6.1 ns     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     2.740ns|     3.360ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/RXGMIIRSTGENEN.SYNC_GMII_MII_RX_RESET_I |         |            |            |        |            
+  /RESET_OUT"         MAXDELAY = 6.1 ns     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     2.899ns|     3.201ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/RXGMIIRSTGENEN.SYNC_GMII_MII_RX_RESET_I |         |            |            |        |            
+  /RESET_OUT"         MAXDELAY = 6.1 ns     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_RDY" OFFSET = OUT 8 ns AFTE | MAXDELAY|     3.350ns|     4.650ns|       0|           0
+  R COMP "cpci_clk"                         |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_DMA_OUT" OFFSET = OUT 8 ns  | MAXDELAY|     3.359ns|     4.641ns|       0|           0
+  AFTER COMP "cpci_clk"                     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     3.396ns|     2.704ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1"   |         |            |            |        |            
+         MAXDELAY = 6.1 ns                  |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     3.498ns|     2.602ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1"   |         |            |            |        |            
+         MAXDELAY = 6.1 ns                  |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     3.693ns|     2.407ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1"   |         |            |            |        |            
+         MAXDELAY = 6.1 ns                  |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_cpci_clk = PERIOD TIMEGRP "cpci_clk" 1 | SETUP   |     4.633ns|    11.367ns|       0|           0
+  6 ns HIGH 50%                             | HOLD    |     0.473ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     4.879ns|     1.221ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift4"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.095ns|     1.005ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t2"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.100ns|     1.000ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift2"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.125ns|     0.975ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift5"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.158ns|     0.942ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift3"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.211ns|     0.889ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t1"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.215ns|     0.885ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift4"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.276ns|     0.824ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t2"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.276ns|     0.824ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift1"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.281ns|     0.819ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift6"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.291ns|     0.809ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift2"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.329ns|     0.771ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift1"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.334ns|     0.766ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift3"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.335ns|     0.765ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift1"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.335ns|     0.765ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift5"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.335ns|     0.765ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t1"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.347ns|     0.753ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift7"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.351ns|     0.749ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift7"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.361ns|     0.739ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift4"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[2].nf2_m | MAXDELAY|     5.363ns|     0.737ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t3"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TIMEGRP "CPCI_DATA" OFFSET = OUT 10 ns AF | MAXDELAY|     5.370ns|     4.630ns|       0|           0
+  TER COMP "cpci_clk"                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.382ns|     0.718ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift6"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.383ns|     0.717ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift3"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.396ns|     0.704ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift2"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.527ns|     0.573ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift7"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.541ns|     0.559ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t2"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.550ns|     0.550ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t1"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.560ns|     0.540ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift6"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.567ns|     0.533ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift2"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.569ns|     0.531ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift6"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.570ns|     0.530ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift1"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.570ns|     0.530ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift3"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.570ns|     0.530ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift5"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.571ns|     0.529ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t1"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.571ns|     0.529ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift5"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.571ns|     0.529ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift4"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.571ns|     0.529ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t2"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[0].nf2_m | MAXDELAY|     5.729ns|     0.371ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t3"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[3].nf2_m | MAXDELAY|     5.768ns|     0.332ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t3"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.824ns|     0.276ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_shif |         |            |            |        |            
+  t3"         MAXDELAY = 6.1 ns             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "nf2_core/mac_groups[1].nf2_m | MAXDELAY|     5.898ns|     0.202ns|       0|           0
+  ac_grp/tri_mode_eth_mac/BU2/U0/TRIMAC_INS |         |            |            |        |            
+  T/SYNC_GMII_MII_TX_RESET_I/RESET_OUT_1_sh |         |            |            |        |            
+  ift7"         MAXDELAY = 6.1 ns           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 4 mins 59 secs 
+Total CPU time to PAR completion: 4 mins 58 secs 
+
+Peak Memory Usage:  778 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 0
+Number of info messages: 2
+
+Writing design to file nf2_top_par.ncd
+
+
+
+PAR done!

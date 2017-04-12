@@ -1,0 +1,216 @@
+// $Id: cnet_sram_sm.v 6061 2011-12-09 20:53:23Z grg $
+//
+// Module: cnet_sram_sm with frequency scaling feature.v
+// Project: NetFPGA-1G
+// Description: CNET SRAM controller
+//
+// Accepts requests for reading or writing and then services them in some
+// sort of round-robin order.
+//
+// Set up to drive a Cypress cy7c1370 NOBL part (512Kx36), but anything with
+// two clock delay from addr to data should be OK.
+//
+// We do not exploit the NOBL feature but instead we provide a bus turn around
+// cycle because we can afford to do it.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+`timescale  1ns /  10ps
+module cnet_sram_sm  #(parameter SRAM_ADDR_WIDTH = 19,
+                       parameter SRAM_DATA_WIDTH = 72 )
+
+   (
+
+   // --- Requesters (read and/or write)
+
+   input                               wr_0_req,
+   input      [SRAM_ADDR_WIDTH-1:0]    wr_0_addr,
+   input      [SRAM_DATA_WIDTH-1:0]    wr_0_data,
+   output 	                           wr_0_ack,
+
+   input                               wr_1_req,
+   input      [SRAM_ADDR_WIDTH-1:0]    wr_1_addr,
+   input      [SRAM_DATA_WIDTH-1:0]    wr_1_data,
+   output 	                           wr_1_ack,
+
+   input                               rd_0_req,
+   input      [SRAM_ADDR_WIDTH-1:0]    rd_0_addr,
+   output     [SRAM_DATA_WIDTH-1:0]    rd_0_data,
+   output                              rd_0_ack,
+   output                              rd_0_vld,
+
+   input                               rd_1_req,
+   input      [SRAM_ADDR_WIDTH-1:0]    rd_1_addr,
+   output     [SRAM_DATA_WIDTH-1:0]    rd_1_data,
+   output                              rd_1_ack,
+   output                              rd_1_vld,
+
+   // --- SRAM signals (pins and control)
+
+   output reg		 [SRAM_ADDR_WIDTH-1:0]    sram_addr,
+   output reg		                          sram_we,
+   output reg		 [SRAM_DATA_WIDTH/9-1:0]  sram_bw,
+   output reg  	 [SRAM_DATA_WIDTH-1:0]    sram_wr_data,
+   input  	       [SRAM_DATA_WIDTH-1:0]    sram_rd_data,
+   output reg		                          sram_tri_en,
+
+   // --- Misc
+	output      [31:0]							debug_data,
+
+   input clk_125,
+
+   input reset,
+   input clk
+
+   );
+	
+	wire [SRAM_ADDR_WIDTH-1:0]    sram_addr_to_fifo;
+	wire [SRAM_DATA_WIDTH-1:0]    sram_data_to_fifo;
+   wire [3:0]							sram_vld_to_fifo;
+	
+//	reg			 [SRAM_DATA_WIDTH-1:0]    sram_rd_data_to_ctrl ; 
+
+   wire  		 [SRAM_ADDR_WIDTH-1:0]    sram_addr_from_ctrl ;
+   wire  		                          sram_we_from_ctrl,addr_not_vld ;
+   wire  		 [SRAM_DATA_WIDTH/9-1:0]  sram_bw_from_ctrl ;
+   wire    	    [SRAM_DATA_WIDTH-1:0]    sram_wr_data_from_ctrl ; 
+   wire  		                          sram_tri_en_from_ctrl ;
+
+
+	// Bidirs
+	wire [35:0] CONTROL0;
+
+	// Instantiate the Unit Under Test (UUT)
+	icon_core icon_core_uut (
+		.CONTROL0(CONTROL0)
+	);
+	// Bidirs
+
+	// Instantiate the Unit Under Test (UUT)
+	reg [7:0] TRIG0;
+	reg [7:0] TRIG1;
+	reg [7:0] TRIG2;
+	reg [7:0] TRIG3;
+	reg [7:0] TRIG4;
+	reg [7:0] TRIG5;
+	reg [7:0] TRIG6;
+	reg [7:0] TRIG7;
+
+   
+ 
+	// Bidirs
+
+	// Instantiate the Unit Under Test (UUT)
+	ila_core ila_core_uut (
+		.CLK(clk), 
+		.CONTROL(CONTROL0), 
+		.TRIG0(TRIG0),
+		.TRIG1(TRIG1),
+		.TRIG2(TRIG2),
+		.TRIG3(TRIG3),
+		.TRIG4(TRIG4),
+		.TRIG5(TRIG5),
+		.TRIG6(TRIG6),		
+		.TRIG7(TRIG7)
+
+		
+	);
+
+ 
+ 
+   wire        [SRAM_ADDR_WIDTH-1:0]    sram_addr_from_fifo ;
+   wire   		[SRAM_DATA_WIDTH-1:0]    sram_data_from_fifo ,rd_data_buf ;
+	wire        [3:0]							 sram_vld_from_fifo ,sram_vld_from_fifo_phase4 ;
+	wire											 sram_rd_data_wr_en;
+	wire											 empty_data_recv ;
+	
+	always@(posedge clk_125)begin
+	sram_addr   <= sram_addr_from_ctrl ;
+	sram_we     <= sram_we_from_ctrl ;
+	sram_bw     <= sram_bw_from_ctrl ;
+	sram_wr_data<=	sram_wr_data_from_ctrl ;
+	sram_tri_en <= sram_tri_en_from_ctrl ;
+	
+
+	TRIG0  <= sram_addr_to_fifo[7:0] ;
+	TRIG1  <= sram_data_to_fifo[7:0] ;
+	TRIG2  <= sram_data_to_fifo[15:8] ;
+	TRIG3  <= sram_data_to_fifo[23:16] ;
+	TRIG4  <= sram_data_to_fifo[31:24] ;
+	TRIG5  <= sram_data_to_fifo[39:32] ;
+	TRIG6  <= {sram_data_to_fifo[71:68],sram_vld_to_fifo} ;
+	TRIG7  <= {sram_vld_from_fifo_phase4,addr_not_vld,rd_0_vld,rd_0_ack,wr_0_req} ;
+
+
+	
+	//TRIG1  <= sram_data_to_fifo ;
+	//TRIG2  <= sram_vld_to_fifo ;
+
+	end
+	
+	
+	
+   	// Instantiate the Unit Under Test (UUT)
+	module_ctrl module_controller (
+
+		.wr_0_req(wr_0_req), 
+		.wr_0_addr(wr_0_addr), 
+		.wr_0_data(wr_0_data), 
+		.wr_0_ack(wr_0_ack), 
+		
+		.wr_1_req(wr_1_req), 
+		.wr_1_addr(wr_1_addr), 
+		.wr_1_data(wr_1_data), 
+		.wr_1_ack(wr_1_ack), 
+
+		.rd_0_req(rd_0_req), 
+		.rd_0_addr(rd_0_addr), 
+		.rd_0_ack(rd_0_ack), 
+
+		.rd_1_req(rd_1_req), 
+		.rd_1_addr(rd_1_addr), 
+		.rd_1_ack(rd_1_ack), 
+
+		.sram_addr(sram_addr_to_fifo), 
+		.sram_data(sram_data_to_fifo), 
+		.sram_vld(sram_vld_to_fifo), 
+		
+		.addr_not_vld(addr_not_vld),
+
+		.reset(reset), 
+		.clk(clk)
+
+	);
+	
+		sram_ctrl sram_controller (
+
+		.rd_0_data(rd_0_data), 
+		.rd_0_vld(rd_0_vld), 
+
+		.rd_1_data(rd_1_data), 
+		.rd_1_vld(rd_1_vld), 
+
+		.sram_addr_to_fifo(sram_addr_to_fifo), 
+		.sram_data_to_fifo(sram_data_to_fifo), 
+		.sram_vld_to_fifo(sram_vld_to_fifo), 
+	   .sram_vld_from_fifo(sram_vld_from_fifo) ,
+//	   .sram_addr_from_fifo(sram_addr_from_fifo) ,
+//      .sram_data_from_fifo(sram_data_from_fifo) ,
+
+		.rd_data_buf(rd_data_buf) ,
+		.sram_rd_data_wr_en(sram_rd_data_wr_en) ,
+	   .sram_vld_from_fifo_phase4(sram_vld_from_fifo_phase4) ,
+
+		.sram_addr(sram_addr_from_ctrl), 
+		.sram_we(sram_we_from_ctrl), 
+		.sram_bw(sram_bw_from_ctrl), 
+		.sram_wr_data(sram_wr_data_from_ctrl), 
+		.sram_rd_data(sram_rd_data), 
+		.sram_tri_en(sram_tri_en_from_ctrl), 
+
+		.reset(reset), 
+		.clk(clk), 
+		.clk_125(clk_125)
+	);
+
+endmodule // cnet_sram_sm
